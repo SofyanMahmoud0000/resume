@@ -1,152 +1,165 @@
-\documentclass{resume}
+% !TeX spellcheck = en_GB
+% !TeX program = pdflatex
+%
+% LetzCV-sleek 1.0 LaTeX template
+% Author: Andreï V. Kostyrka, University of Luxembourg
+%
+% This template fills the gap in the available variety of templates
+% by proposing something that is not a custom class, not using any
+% hard-coded settings deeply hidden in style files, and provides
+% a handful of custom command definitions that are as transparent as it gets.
+% Developed at the University of Luxembourg.
+%
+% *NOTHING IS HARCODED, and never should be.*
+%
+% Target audience: applicants in the IT industry, or business in general
+%
+% The main strength of this template is, it explicitly showcases how
+% to break the flow of text to achieve the most flexible right alignment
+% of dates for multiple configurations.
 
+\documentclass[11pt, a4paper]{article} 
 
-\usepackage[left=0.75in,top=0.6in,right=0.75in,bottom=0.6in]{geometry} 
-\usepackage{hyperref}
-\usepackage[inline]{enumitem}
-\hypersetup{
-    colorlinks=true,
-    linkcolor=blue,
-    filecolor=magenta,      
-    urlcolor=blue,
-}
-\newcommand{\tab}[1]{\hspace{.2667\textwidth}\rlap{#1}}
-\newcommand{\itab}[1]{\hspace{0em}\rlap{#1}}
+\usepackage[T1]{fontenc}     % We are using pdfLaTeX,
+\usepackage[utf8]{inputenc}  % hence this preparation
+\usepackage[british]{babel}  
+\usepackage[left = 0mm, right = 0mm, top = 0mm, bottom = 0mm]{geometry}
+\usepackage[stretch = 25, shrink = 25]{microtype}  
+\usepackage{graphicx}        % To insert pictures
+\usepackage{xcolor}          % To add colour to the document
+\usepackage{marvosym}        % Provides icons for the contact details
 
-%----------------------------------------------------------------------------------------
-%	                                  Information Section 
-%----------------------------------------------------------------------------------------
+\usepackage{enumitem}        % To redefine spacing in lists
+\setlist{parsep = 0pt, topsep = 0pt, partopsep = 1pt, itemsep = 1pt, leftmargin = 6mm}
 
-\name{Sofyan Mahmoud El-Sayed}
-\address{(+20)1153383255 \\ sofyan1020@gmail.com}
-\address{
-  \href{https://github.com/sofyanmahmoud0000}{\textbf{Github}} \\ 
-  \href{https://www.linkedin.com/in/sofyan-mahmoud-b1aa70138/}{\textbf{LinkedIn}} \\ 
-  \href{https://leetcode.com/sofyan1020}{\textbf{Leetcode}}
-  % \href{https://sofyanmahmoud0000.github.io/portfolio}{\textbf{portfolio}}
-  }
-\address{\Large{Software development engineer (+3 years exp)}}
+\usepackage{fontawesome5}        % Change this to use any font, but keep it simple
+\usepackage{FiraSans}        % Change this to use any font, but keep it simple
+\renewcommand{\familydefault}{\sfdefault}
+
+\definecolor{secondColor}{HTML}{000000}
+
+%%%%%%% USER COMMAND DEFINITIONS %%%%%%%%%%%%%%%%%%%%%%%%%%%
+% These are the real workhorses of this template
+\newcommand{\dates}[1]{\hfill\mbox{\textbf{#1}}} % Bold stuff that doesn’t got broken into lines
+\newcommand{\is}{\par\vskip.5ex plus .4ex} % Item spacing
+\newcommand{\smaller}[1]{{\small$\diamond$\ #1}}
+\newcommand{\headleft}[1]{\vspace*{3ex}\textsc{\textbf{#1}}\par%
+    \vspace*{-1.5ex}\hrulefill\par\vspace*{0.7ex}}
+\newcommand{\headright}[1]{\vspace*{2.5ex}\textsc{\Large\color{secondColor}#1}\par%
+     \vspace*{-2ex}{\color{secondColor}\hrulefill}\par}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[colorlinks = true, urlcolor = blue, linkcolor = blue, citecolor = blue, anchorcolor = blue]{hyperref}
+
 \begin{document}
 
-%----------------------------------------------------------------------------------------
-%	                                EDUCATION SECTION
-%----------------------------------------------------------------------------------------
+% Style definitions -- killing the unnecessary space and adding the skips explicitly
+\setlength{\topskip}{0pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\fboxsep}{0pt}
+\pagestyle{empty}
+\raggedbottom
 
-\begin{rSection}{Education and military service}
-  \textbf{Graduated from} Cairo University, Faculty of Engineering, Computer Engineering Department.\\ . \hfill {\em August 2016 - August 2021}
+\begin{minipage}[t]{0.33\textwidth} %% Left column -- outer definition
+%  Left column -- top dark rectangle
+\colorbox{secondColor}{\begin{minipage}[t][5mm][t]{\textwidth}\null\hfill\null\end{minipage}}
 
-  \begin{itemize}
-      \item \textbf{Cumulative grade:} Very Good. 
-      \item \textbf{Graudation project:} Excellent\\
-  \end{itemize}
+\vspace{-.2ex} % Eliminates the small gap
+\colorbox{secondColor!90}{\color{white}  %% LEFT BOX
+\kern0.09\textwidth\relax% Left margin provided explicitly
+\begin{minipage}[t][293mm][t]{0.82\textwidth}
+\raggedright
+\vspace*{2.5ex}
 
-  \textbf{Graduated from high school (2016):} Grade 99 \%.
+\Large \centerline{Sofyan \textbf{\textsc{Mahmoud}}} \normalsize 
 
-  \textbf{Military service:} Completed.
+% Centering without extra vertical spacing
+\null\hfill\includegraphics[width=0.65\textwidth]{avatar.jpeg}\hfill\null
 
-\end{rSection}
+\vspace*{0.5ex} % Extra space after the picture
 
-%----------------------------------------------------------------------------------------
-%	                               WORK SECTION
-%----------------------------------------------------------------------------------------
+\headleft{Profile}
+Passionate Software Engineer with over 3 years of experience specializing in developing web applications and backend systems. 
+Proficient in writing clear, concise code that prioritizes ease of maintenance and troubleshooting. 
+Experienced in collaborating with both small and large teams across diverse projects and organizations. 
+Able to work effectively in both remote and office environments as required by the company. 
+Demonstrated enthusiasm for problem-solving, evidenced by recent achievement in the top 17\% of the LeetCode community.
 
-\begin{rSection}{Experiece}
-  \begin{itemize}
-    \item Software engineer at \href{https://www.linkedin.com/company/solera-llc/mycompany/verification/}{Solera energy}. \hfill{(September 2023 – current)}
-          \begin{itemize}
-            \item Working as a back-end engineer using \textbf{Flask, Postgress}
-          \end{itemize}
+\headleft{Contact details}
+\small % To fit more content
+\Letter\ {\small sofyan1020@gmail.com} \\[0.4ex]
+\faMobile\ +20\,11\,533\,832\,55 \\[0.5ex]
+\faLinkedin\ \href{https://www.linkedin.com/in/sofyanmahmoud0000/}{LinkedIn} \\[0.1ex]
+\faGithub\ \href{https://github.com/sofyanmahmoud0000}{Github} \\[0.1ex]
+\faAt\ \href{https://leetcode.com/sofyan1020/}{Leetcode} \\[0.1ex]
+\normalsize
 
-    \item C++ instructor at \href{https://web.facebook.com/mecacademyegy}{MEC Academy}. \hfill{(Jul 2023 – current)}
-          \begin{itemize}
-            \item The content of the course is \textbf{C++ Fundamental, OOP and DAS}
-          \end{itemize}
-    
-    \item Software development engineer at \href{https://www.linkedin.com/company/edentech2/mycompany/}{Eden technologies}. \hfill{(November 2022 – September 2023)}
-          \begin{itemize}
-            \item Working on many services for parking system in smart villages in \textbf{Saudi Arabia}
-            \item The main responsibilties is to create APIs in many services some of them using \
-              \textbf{flask/python} and other using \textbf{spring boot/java} with \textbf{MongoDb}
-          \end{itemize}
-    \item React software engineer at Egyptian armed forces. \hfill{(December 2021 – December 2022)}
-    \begin{itemize}
-      \item Building an ERP system used in the egyption armed forces using \textbf{React}
-    \end{itemize}
-    \item Intern team leader at \href{https://najahnow.net}{NajahNow} company \hfill{(July 2021 – September 2021)}
-          \begin{itemize}
-            \item Leading 40 engineers in internship divided to 4 teams, 
-            each team works on a different project using stack \textbf{laravel, React and React native}
-          \end{itemize}
+\headleft{Personal information}
+%Year of birth: \textbf{1861} \\[0.5ex]
+Military service: \textbf{Completed} \\
+Citizenship: \textbf{Egypt} \\[0.5ex]
+Family: \textbf{Single without children} \\[0.5ex]
+Languages: \textbf{English} (B2), \textbf{Arabic} (native)
 
-    \item Software developer engineer at \href{https://najahnow.net}{NajahNow} company: \hfill{(July 2020 – March 2021)}
-          \begin{itemize}
-              \item I have worked in the main \href{https://najahnow.net}{platform} of the company
-              \item I have refactored the platform that I have changed the whole \textbf{front-end} and about \textbf{50 \% of the backend}
-              \item I have added some features to the platform such as 
-              \begin{itemize}
-                  \item Quiz system 
-                  \item Integrate the platform with online payment (Fawry payment)
-                  \item Integrate the platform with whatsapp 
-                  \item Deploying the platform on gcp
-                  \item And some small features
-              \end{itemize}
-          \end{itemize}
-  \end{itemize}
-\end{rSection}
+\end{minipage}%
+\kern0.09\textwidth\relax%%Right margin provided explicitly to stretch the colourbox
+}
+\end{minipage}% Right column
+\hskip2.5em% Left margin for the white area
+\begin{minipage}[t]{0.56\textwidth}
+\setlength{\parskip}{0.8ex}% Adds spaces between paragraphs; use \\ to add new lines without this space. Shrink this amount to fit more data vertically
 
-%----------------------------------------------------------------------------------------
-%	                                    SKILL SECTION
-%----------------------------------------------------------------------------------------
+\vspace{2ex}
 
-\newpage
+\headright{Experience}
 
-\begin{rSection}{Skills}
-  \item \textbf{Concepts:} Algorithms, Data structure, Problem solving, OOP, OOD, Design patterns, RESTful APIs.
-  \item \textbf{Tools:} Git, Github, Docker.
-  \item \textbf{Programming Languages:} C++, Java, Python, php, Js.
-  \item \textbf{Frameworks/Libararies/Runtime environment:} Spring boot, Laravel, ReactJs, Nodejs and Flask.
-  \item \textbf{Hyper text languages:} HTML, CSS, LATEX.
-  \item \textbf{Database}  : SQL, MySQL, MongoDB, postgress.
-  \item \textbf{OS} : Linux(+5 years experience), Windows
-  % \item \textbf{Speacking Language} Arabic (Native), English (Very good.)
-\end{rSection}
+\textsc{Back-end engineer} @ \textit{Settle} \dates{2023.09--pres.} \\
+\smaller{Working on a \textbf{Microservices} project to automate the process of b2b payments enabling clients to pay all their suppliers in a seamless few clicks.} \\
+\smaller{\textbf{Stack}: Flask/Python, Postgresql, RabbitMQ}
 
-\begin{rSection}{Projects}
-  \begin{itemize}
-    \item NajahNow platform for online education - \textbf{Laravel, Blade templates} \hfill{\underline{\href{https://najahnow.net}{Link}}}
-    \item Matchera (A website to reserve a seat in stadium) - \textbf{Laravel, React, SQL, Docker} \hfill{\underline{\href{https://github.com/sofyanmahmoud0000/Matchera}{Repo}}}
-    \item Search engine indexer - \textbf{Java, MySql} \hfill{\underline{\href{https://github.com/sofyanmahmoud0000/Jindexer}{Repo}}}
-    \item Bubble sheet corrector - \textbf{Python, OpenCV} \hfill{\underline{\href{https://github.com/sofyanmahmoud0000/BSCorrector}{Repo}}}
-    \item OS-Scheduler - \textbf{C++,Python} \hfill{\underline{\href{https://github.com/sofyanmahmoud0000/OS-Scheduler}{Repo}}}
-  \end{itemize}
-\end{rSection}
 
-\begin{rSection}{Student activities}
-  \begin{itemize}
-    \item Technical community head at \textbf{IEEE} student activity \hfill{(August 2020 – March 2021)}
-    \begin{itemize}
-        \item Technical community head for workshops: \textbf{C++, Python, Front-end}
-        % \begin{enumerate*}[label=]
-    \end{itemize}
-    \item Back-end instructor at \textbf{IEEE} student activity (best member) \hfill{(August 2019 – August 2020)}
-    \begin{itemize}
-        \item The sessions were about \textbf{Php, MySql, PDO}
-    \end{itemize}
-  \end{itemize}
-\end{rSection}
+\is % Item spacing -- defined in the preamble
+\textsc{C++ instructor} @ \textit{MEC Academy} \dates{2023.08--2024.12.} \\
+\smaller{Teaching programming fundamentals, OOP, Data structure and algorithms using C++ languages} \\
+\smaller{I've taught two groups, each includes about 15 students} 
 
-%---------------------------------------------------------------------------------------
-%   IMPORTANT LINKS
-%---------------------------------------------------------------------------------------
+\is % Item spacing -- defined in the preamble
+\textsc{Back-end engineer} @ \textit{Eden technologies}  \dates{2022.12--2023.09.} \\
+\smaller{Working on \textbf{Microservices} for parking system project in smart villages in \textbf{Saudi Arabia}.} \\
+\smaller{\textbf{Stack}: Java/Spring-boot, Flask/Python, Postgresql, MongoDB, RabbitMQ}
 
-% \begin{rSection}{Important links}
-%     If there is any problem to open the directed links in address section, there you are the links themself of my accounts 
-%     \begin{itemize}
-%         \item \textbf{Github:} \href{https://github.com/sofyanmahmoud0000}{https://github.com/sofyanmahmoud0000}
-%         \item \textbf{LinkedIn:} \href{https://www.linkedin.com/in/sofyan-mahmoud-b1aa70138/}{https://www.linkedin.com/in/sofyan-mahmoud-b1aa70138/}
-%     \end{itemize}
-% \end{rSection}
+\is % Item spacing -- defined in the preamble
+\textsc{Front-end engineer} @ \textit{Egyptian armed forces.}  \dates{2021.11--2022.12.} \\
+\smaller{Working on \textbf{ERP} system used in Egyption armed forces.} \\
+\smaller{\textbf{Stack}: React, Java script}
+
+\is % Item spacing -- defined in the preamble
+\textsc{Full-stack engineer} @ \href{https://najahnow.net}{\textit{NajahNow}}  \dates{2020.06--2021.03.} \\
+\smaller{Working on \textbf{Online educational platform} used for education during COVID-19 pandemic.} \\
+\smaller{\textbf{Stack}: PHP/Laravel, Blade templates, JS, HTML, CSS, MySQL}
+
+\headright{Education}
+\textsc{Bachelor of Engineering.} Faculty of engineering, Computer Engineering Department \textit{Cairo University}.  \dates{2016--2021} \\
+\smaller{\textbf{Overall Grade}: Very Good, \textbf{GP grade}: Excellent} \\
+\smaller{\textbf{Graduation project}: A software solution called Autoeye is used to help the autonomous vehicle in adverse weather conditions, solution
+pipeline was dedicated in detection of the current state of the environment surrounding the vehicle and then apply computer vision and
+deep learning techniques to enhance the vision stream from the camera in order to be used to make the actions better}
+
+\headright{Skills}
+\smaller{\textbf{Concepts}: Algorithms, Data structure, Problem solving, OOP, OOD, Design patterns, RESTful APIs.} \\
+\smaller{\textbf{Tools}: Git, Github, Docker.} \\
+\smaller{\textbf{Programming Languages}: C++, Java, Python, php, Js.} \\
+\smaller{\textbf{Technologies}: Spring boot, Laravel, ReactJs, Nodejs, Flask} \\
+\smaller{\textbf{Hyper text languages}: HTML, CSS, LATEX.} \\ 
+\smaller{\textbf{Database}: SQL, MySQL, MongoDB, PostgreSql} \\
+\smaller{\textbf{Queuing system}: RabbitMQ} \\
+\smaller{\textbf{OS}: Linux(+5 years experience), Windows}
+
+\headright{Recent humble achievements}
+\smaller{Solve +600 problems in leetcode and reacth the top \textbf{17\%} in the leetcode cummunity} \dates{2024.01} \\
+\smaller{Publish my first \href{https://www.linkedin.com/posts/sofyanmahmoud0000_the-difference-between-str-str-activity-7151649201855045634-XyjD?utm_source=share&utm_medium=member_desktop}{video} in my linkedin profile explaining a string trick mentioned in \textbf{Cracking cooding interview} book} \dates{2024.01} \\
+
+\end{minipage}
 
 \end{document}
-
-\includegraphics[width=3cm, height=4cm]{lion-logo}

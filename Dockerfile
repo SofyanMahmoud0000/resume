@@ -5,5 +5,6 @@ WORKDIR /app
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update && apt install texlive-latex-extra latexmk -y
+RUN apt install texlive-fonts-extra -y
 
 CMD ["sh", "-c", "pdflatex *.tex"]

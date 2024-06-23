@@ -1,7 +1,7 @@
 services:
   latex:
     container_name: latex
-    image: sofyanmahmoud0000/latex
+    image: sofyanmahmoud0000/latex:2
     build: .
     volumes:
       - ./:/app

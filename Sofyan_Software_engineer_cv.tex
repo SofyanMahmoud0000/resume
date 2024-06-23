@@ -1,164 +1,273 @@
-% !TeX spellcheck = en_GB
-% !TeX program = pdflatex
-%
-% LetzCV-sleek 1.0 LaTeX template
-% Author: Andreï V. Kostyrka, University of Luxembourg
-%
-% This template fills the gap in the available variety of templates
-% by proposing something that is not a custom class, not using any
-% hard-coded settings deeply hidden in style files, and provides
-% a handful of custom command definitions that are as transparent as it gets.
-% Developed at the University of Luxembourg.
-%
-% *NOTHING IS HARCODED, and never should be.*
-%
-% Target audience: applicants in the IT industry, or business in general
-%
-% The main strength of this template is, it explicitly showcases how
-% to break the flow of text to achieve the most flexible right alignment
-% of dates for multiple configurations.
+%-------------------------
+% Entry-level Resume in LaTeX
+% Version - v1.3
+% Last Edits - October 5, 2021
+% Author : Jayesh Sanwal
+% Reach out to me on LinkedIn(/in/jsanwal), with any suggestions, ideas, issues, etc.
+%------------------------
 
-\documentclass[11pt, a4paper]{article} 
+%%-------------------------------------
+% Notes to the User here -
+% 1) Change " Author+an = {N=highlight}" in "Publications.bib", where N is the number at which your name appears
+% 2) Use "\vspace" wisely, that would change spacing, and is currently being used as a hacky fix
+% 3) Do not delete the fonts in the left side
+% 4) Use the "Rich Text" feature on Overleaf - On the top panel next to source. Makes it much easier for starters on LaTeX to use this template
+% 5) Do NOT use periods at the end of bullet points, the sample (ipsum) text might have it
+% 6) Use "maxbibnames" on this file to change the maximum number of authors on the paper (Credits: Dr. Natasha Krell) - Default is 3, but change line 92 to add authors
 
-\usepackage[T1]{fontenc}     % We are using pdfLaTeX,
-\usepackage[utf8]{inputenc}  % hence this preparation
-\usepackage[british]{babel}  
-\usepackage[left = 0mm, right = 0mm, top = 0mm, bottom = 0mm]{geometry}
-\usepackage[stretch = 25, shrink = 25]{microtype}  
-\usepackage{graphicx}        % To insert pictures
-\usepackage{xcolor}          % To add colour to the document
-\usepackage{marvosym}        % Provides icons for the contact details
+%%-------------------------------------
+% Changes from last version (v1.3, October 5, 2021) -
+% 1) Summary statement removed, replaced with 4 keywords on top and Impact statement
 
-\usepackage{enumitem}        % To redefine spacing in lists
-\setlist{parsep = 0pt, topsep = 0pt, partopsep = 1pt, itemsep = 1pt, leftmargin = 6mm}
+% Changes from last version (v1.2, August 23, 2021) -
+% 1) Changes in the Technical Skills section - renamed to just Skills
+% 2) Changed the font size for the name
+% 3) Education to the top
+%%-------------------------------------
 
-\usepackage{fontawesome5}        % Change this to use any font, but keep it simple
-\usepackage{FiraSans}        % Change this to use any font, but keep it simple
-\renewcommand{\familydefault}{\sfdefault}
 
-\definecolor{secondColor}{HTML}{000000}
+%%-------------------------------------
+% Changes to be made in the next version -
+% 1) Shift to Class file, make changes here
+% 2) Use a fonts folder
+% 3) Incorporate Leadership & volunteering together
+% 4) Remove \vspace based 'hacky' fixes
+%%-------------------------------------
 
-%%%%%%% USER COMMAND DEFINITIONS %%%%%%%%%%%%%%%%%%%%%%%%%%%
-% These are the real workhorses of this template
-\newcommand{\dates}[1]{\hfill\mbox{\textbf{#1}}} % Bold stuff that doesn’t got broken into lines
-\newcommand{\is}{\par\vskip.5ex plus .4ex} % Item spacing
-\newcommand{\smaller}[1]{{\small$\diamond$\ #1}}
-\newcommand{\headleft}[1]{\vspace*{3ex}\textsc{\textbf{#1}}\par%
-    \vspace*{-1.5ex}\hrulefill\par\vspace*{0.7ex}}
-\newcommand{\headright}[1]{\vspace*{2.5ex}\textsc{\Large\color{secondColor}#1}\par%
-     \vspace*{-2ex}{\color{secondColor}\hrulefill}\par}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\usepackage[colorlinks = true, urlcolor = blue, linkcolor = blue, citecolor = blue, anchorcolor = blue]{hyperref}
+\documentclass[a4,10pt]{article}
+
+%%%%%%% --------------------------------------------------------------------------------------
+%%%%%%%  STARTING HERE, DO NOT TOUCH ANYTHING 
+%%%%%%% --------------------------------------------------------------------------------------
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+ \usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+\usepackage{hyperref}
+\usepackage{csquotes}
+\usepackage{tabularx}
+\hypersetup{colorlinks=true,urlcolor=black}
+\usepackage[11pt]{moresize}
+\usepackage{setspace}
+\usepackage{fontspec}
+\usepackage[inline]{enumitem}
+\usepackage{array}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+\usepackage{anyfontsize}
+
+%%%% Set Margins
+\usepackage[margin=1cm, top=1cm]{geometry}
+
+%%%% Set Fonts
+\setmainfont[
+BoldFont=SourceSansPro-Semibold.otf, %SourceSansPro-Bold.otf
+ItalicFont=SourceSansPro-RegularIt.otf
+]{SourceSansPro-Regular.otf}
+\setsansfont{SourceSansPro-Semibold.otf}
+
+%%%% Set Page
+\pagestyle{fancy}
+\fancyhf{} 
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+%%%% Set URL Style
+\urlstyle{same}
+
+%%%% Set Indentation
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+%%%% Set Secondary Color
+\definecolor{UI_blue}{RGB}{32, 64, 151}
+
+%%%% Define New Commands
+\usepackage[style=nature, maxbibnames=3]{biblatex}
+\addbibresource{Publications.bib}
+
+%%%% Bold Name in Publications
+\renewcommand*{\mkbibnamegiven}[1]{%
+\ifitemannotation{highlight}
+{\textbf{#1}}
+{#1}}
+
+\renewcommand*{\mkbibnamefamily}[1]{%
+\ifitemannotation{highlight}
+{\textbf{#1}}
+{#1}}
+
+%%%% Set Sections formatting
+\titleformat{\section}{
+\color{UI_blue} \scshape \raggedright \large 
+}{}{0em}{}[\vspace{-10pt} \hrulefill \vspace{-6pt}]
+
+%%%% Set Subtext Formatting
+\newcommand{\subtext}[1]{
+#1\par\vspace{-0.2cm}}
+
+% \newcommand{\subtextit}[1]{\vspace{0.15cm}
+% \textit{ #1 \vspace{-0.2cm}} }
+
+%%%% Set Item Spacing
+\setlist[itemize]{align=parleft,left=0pt..1em}
+
+%%%% New Itemize "Zitemize" Formatting - tighter spacing than itemize
+\newenvironment{zitemize}{
+\begin{itemize}\itemsep0pt \parskip0pt \parsep1pt}
+{\end{itemize}\vspace{-0.5cm}}
+
+
+%%%% Define Skills Bold Formatting
+\newcommand{\hskills}[1]{
+\textbf{\bfseries #1} }
+
+%%%% Set Subsection formatting
+\titleformat{\subsection}{\vspace{-0.1cm} 
+\bfseries \fontsize{11pt}{2cm}}{}{0em}{}[\vspace{-0.2cm}]
+
+%%%%%%% --------------------------------------------------------------------------------------
+%%%%%%% --------------------------------------------------------------------------------------
+%%%%%%%  END OF "DO NOT TOUCH" REGION
+%%%%%%% --------------------------------------------------------------------------------------
+%%%%%%% --------------------------------------------------------------------------------------
 
 \begin{document}
 
-% Style definitions -- killing the unnecessary space and adding the skips explicitly
-\setlength{\topskip}{0pt}
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{0pt}
-\setlength{\fboxsep}{0pt}
-\pagestyle{empty}
-\raggedbottom
+%%%%%%% --------------------------------------------------------------------------------------
+%%%%%%%  HEADER
+%%%%%%% --------------------------------------------------------------------------------------
+\begin{center}
+    \begin{minipage}[b]{0.24\textwidth}
+            \large (+20) 1153383255 \\
+            \large \href{mailto:sofyan1020@email.com}{sofyan1020@email.com} 
+    \end{minipage}% 
+    \begin{minipage}[b]{0.5\textwidth}
+            \centering
+            {\Huge Sofyan Mahmoud} \\ %
+            \vspace{0.1cm}
+            {\color{UI_blue} \Large{Software engineer}} \\
+    \end{minipage}% 
+    \begin{minipage}[b]{0.24\textwidth}
+            \flushright \large  % Willing to Relocate
+            \href{https://www.linkedin.com/in/sofyanmahmoud0000/}{\color{blue}{LinkedIn} } \\
+            \href{https://leetcode.com/u/sofyan1020/}{\color{blue}{Leetcode}} \\ 
+            \href{https://github.com/sofyanmahmoud0000}{\color{blue}{Github}} \\ 
+    \end{minipage}   
+    
+\vspace{-0.15cm} 
+% {\color{UI_blue} \hrulefill}
+\end{center}
+\vspace{-0.25cm}
 
-\begin{minipage}[t]{0.33\textwidth} %% Left column -- outer definition
-%  Left column -- top dark rectangle
-\colorbox{secondColor}{\begin{minipage}[t][5mm][t]{\textwidth}\null\hfill\null\end{minipage}}
+\section{Profile }
+Passionate software engineer with \textbf{over two years of experience}. I graduated from the \textbf{Faculty of Engineering}, 
+Computer Department at \textbf{Cairo University} in Egypt. My primary interest lies in web development, 
+particularly in backend. I have gained extensive experience through my involvement in various projects, 
+using different frameworks and languages including \textbf{Flask/Python, Spring Boot/Java, 
+Laravel/PHP, Node.js, React.js, and C++}. Additionally, I have worked with diverse database engines such as \textbf{MySQL, 
+PostgreSQL, and MongoDB}. Furthermore, I am deeply passionate about \textbf{problem-solving}, 
+and I am proud to have recently achieved a \textbf{top 9\% ranking in the LeetCode community} for my problem-solving skills. \\
+\hfill \break
+\textbf{Military} service: Completed \\
+\textbf{Citizenship}: Egypt \\ 
+\textbf{Family}: Single without children \\
+\textbf{Languages}: English (B2), Arabic (native) \\
 
-\vspace{-.2ex} % Eliminates the small gap
-\colorbox{secondColor!90}{\color{white}  %% LEFT BOX
-\kern0.09\textwidth\relax% Left margin provided explicitly
-\begin{minipage}[t][293mm][t]{0.82\textwidth}
-\raggedright
-\vspace*{2.5ex}
+\vspace{-0.2cm}
 
-\Large \centerline{Sofyan \textbf{\textsc{Mahmoud}}} \normalsize 
+%%%%%%% --------------------------------------------------------------------------------------
+%%%%%%%  EDUCATION
+%%%%%%% --------------------------------------------------------------------------------------
+\section{Education }
+\subsection*{Bachelor of Engineering, Software Engineering, {\normalsize \normalfont Cairo university, Grade: Very Good} \hfill 2016 --- 2021} 
+\begin{zitemize}
+    \item \textbf{Overall Grade}: Very Good, \textbf{GP grade}: Excellent
+    \item \textbf{Graduation project}: A software solution called Autoeye is used to help the
+        autonomous vehicle in adverse weather conditions, solution pipeline was
+        dedicated in detection of the current state of the environment surrounding
+        the vehicle and then apply computer vision and deep learning techniques
+        to enhance the vision stream from the camera in order to be used to make
+        the actions better
+\end{zitemize}
+\vspace{0.2cm}
 
-% Centering without extra vertical spacing
-% \null\hfill\includegraphics[width=0.65\textwidth]{avatar.jpeg}\hfill\null
+%%%%%%% --------------------------------------------------------------------------------------
+%%%%%%%  WORK EXPERIENCE
+%%%%%%% --------------------------------------------------------------------------------------
+\section{Experience}
 
-\vspace*{0.5ex} % Extra space after the picture
+\subsection*{Back-end engineer @ Settle \hfill Egypt | 2023.09 --- Present} 
+    \begin{zitemize}
+        \item Working on a \textbf{Microservices} project to automate the process of b2b pay-
+        ments enabling clients to pay all their suppliers in a seamless few clicks.
+        \item \textbf{Stack}: Flask/Python, Postgresql, RabbitMQ
+    \end{zitemize}
 
-\headleft{Profile}
-Passionate Software Engineer with over 3 years of experience specializing in developing web applications and backend systems. 
-Proficient in writing clear, concise code that prioritizes ease of maintenance and troubleshooting. 
-Experienced in collaborating with both small and large teams across diverse projects and organizations. 
-Able to work effectively in both remote and office environments as required by the company. 
-Demonstrated enthusiasm for problem-solving, evidenced by recent achievement in the top 10\% of the LeetCode community.
+\subsection*{C++ instructor @ MEC Academy \hfill Egypt | 2023.08 --- 2023.12} 
+    \begin{zitemize}
+        \item Teaching programming fundamentals, OOP, Data structure and algorithms
+        using C++ languages
+        \item I’ve taught two groups, each includes about 15 students
+    \end{zitemize}
 
-\headleft{Contact details}
-\small % To fit more content
-\Letter\ {\small sofyan1020@gmail.com} \\[0.4ex]
-\faMobile\ +20\,11\,533\,832\,55 \\[0.5ex]
-\faLinkedin\ \href{https://www.linkedin.com/in/sofyanmahmoud0000/}{LinkedIn} \\[0.1ex]
-\faGithub\ \href{https://github.com/sofyanmahmoud0000}{Github} \\[0.1ex]
-\faAt\ \href{https://leetcode.com/sofyan1020/}{Leetcode} \\[0.1ex]
-\normalsize
+\subsection*{Back-end engineer @ Eden technologies \hfill Egypt | 2022.12 --- 2023.09.} 
+    \begin{zitemize}
+        \item Working on \textbf{Microservices} for car parking management system used in smart villages in
+        \textbf{Saudi Arabia}.
+        \item \textbf{Stack}: Java/Spring-boot, Flask/Python, Postgresql, MongoDB, RabbitMQ
+    \end{zitemize}
 
-\headleft{Personal information}
-%Year of birth: \textbf{1861} \\[0.5ex]
-Military service: \textbf{Completed} \\
-Citizenship: \textbf{Egypt} \\[0.5ex]
-Family: \textbf{Single without children} \\[0.5ex]
-Languages: \textbf{English} (B2), \textbf{Arabic} (native)
+\subsection*{Front-end engineer @ Egyptian armed forces \hfill Egypt | 2021.11 --- 2022.12.} 
+    \begin{zitemize}
+        \item Working on \textbf{ERP} system used in Egyption armed forces.
+        \item \textbf{Stack}: React, Java script
+    \end{zitemize}
 
-\end{minipage}%
-\kern0.09\textwidth\relax%%Right margin provided explicitly to stretch the colourbox
-}
-\end{minipage}% Right column
-\hskip2.5em% Left margin for the white area
-\begin{minipage}[t]{0.56\textwidth}
-\setlength{\parskip}{0.8ex}% Adds spaces between paragraphs; use \\ to add new lines without this space. Shrink this amount to fit more data vertically
-
-\vspace{2ex}
-
-\headright{Experience}
-
-\textsc{Back-end engineer} @ \textit{Settle} \dates{2023.09--pres.} \\
-\smaller{Working on a \textbf{Microservices} project to automate the process of b2b payments enabling clients to pay all their suppliers in a seamless few clicks.} \\
-\smaller{\textbf{Stack}: Flask/Python, Postgresql, RabbitMQ}
+\subsection*{Full-stack engineer @ NajahNow \hfill Egypt | 2020.06 --- 2021.03.} 
+    \begin{zitemize}
+        \item Working on \textbf{Online educational platform} used for education during COVID-
+        19 pandemic.
+        \item \textbf{Stack}: PHP/Laravel, Blade templates, JS, HTML, CSS, MySQL
+    \end{zitemize}
 
 
-\is % Item spacing -- defined in the preamble
-\textsc{C++ instructor} @ \textit{MEC Academy} \dates{2023.08--2024.12.} \\
-\smaller{Teaching programming fundamentals, OOP, Data structure and algorithms using C++ languages} \\
-\smaller{I've taught two groups, each includes about 15 students} 
+%%%%%%% --------------------------------------------------------------------------------------
+%%%%%%%  SKILLS
+%%%%%%% --------------------------------------------------------------------------------------
+\section{Skills}
+\begin{tabular}{p{14em} p{48em}}
+\hskills{Concepts:} &  Algorithms, Data structure, Problem solving, OOP, OOD, Design
+patterns, RESTful APIs. \\
+\hskills{Tools:} & Git, Github, Docker.  \\
+\hskills{Programming Languages} & C++, Java, Python, php, Js. \\
+\hskills{Database:} & SQL, MySQL, MongoDB, PostgreSql. \\
+\hskills{Queuing system} & RabbitMQ. \\
+\hskills{OS} & Linux, Windows \\
+\end{tabular}
+\vspace{-0.2cm}
 
-\is % Item spacing -- defined in the preamble
-\textsc{Back-end engineer} @ \textit{Eden technologies}  \dates{2022.12--2023.09.} \\
-\smaller{Working on \textbf{Microservices} for parking system project in smart villages in \textbf{Saudi Arabia}.} \\
-\smaller{\textbf{Stack}: Java/Spring-boot, Flask/Python, Postgresql, MongoDB, RabbitMQ}
 
-\is % Item spacing -- defined in the preamble
-\textsc{Front-end engineer} @ \textit{Egyptian armed forces.}  \dates{2021.11--2022.12.} \\
-\smaller{Working on \textbf{ERP} system used in Egyption armed forces.} \\
-\smaller{\textbf{Stack}: React, Java script}
+%%%%%%% --------------------------------------------------------------------------------------
+%%%%%%%  PUBLICATIONS
+%%%%%%% --------------------------------------------------------------------------------------
+\section{Recent achievements} 
+\renewcommand\refname{\vskip -1.5em}
+\begin{zitemize}
+    \item Solved \textbf{+800} problems in leetcode and reached the \textbf{top 9\%} in the
+    leetcode cummunity
+\end{zitemize}
+\printbibliography[heading=none]
+\vspace{-0.4cm}
 
-\is % Item spacing -- defined in the preamble
-\textsc{Full-stack engineer} @ \href{https://najahnow.net}{\textit{NajahNow}}  \dates{2020.06--2021.03.} \\
-\smaller{Working on \textbf{Online educational platform} used for education during COVID-19 pandemic.} \\
-\smaller{\textbf{Stack}: PHP/Laravel, Blade templates, JS, HTML, CSS, MySQL}
 
-\headright{Education}
-\textsc{Bachelor of Engineering.} Faculty of engineering, Computer Engineering Department \textit{Cairo University}.  \dates{2016--2021} \\
-\smaller{\textbf{Overall Grade}: Very Good, \textbf{GP grade}: Excellent} \\
-\smaller{\textbf{Graduation project}: A software solution called Autoeye is used to help the autonomous vehicle in adverse weather conditions, solution
-pipeline was dedicated in detection of the current state of the environment surrounding the vehicle and then apply computer vision and
-deep learning techniques to enhance the vision stream from the camera in order to be used to make the actions better}
-
-\headright{Skills}
-\smaller{\textbf{Concepts}: Algorithms, Data structure, Problem solving, OOP, OOD, Design patterns, RESTful APIs.} \\
-\smaller{\textbf{Tools}: Git, Github, Docker.} \\
-\smaller{\textbf{Programming Languages}: C++, Java, Python, php, Js.} \\
-\smaller{\textbf{Technologies}: Spring boot, Laravel, ReactJs, Nodejs, Flask} \\
-\smaller{\textbf{Hyper text languages}: HTML, CSS, LATEX.} \\ 
-\smaller{\textbf{Database}: SQL, MySQL, MongoDB, PostgreSql} \\
-\smaller{\textbf{Queuing system}: RabbitMQ} \\
-\smaller{\textbf{OS}: Linux(+5 years experience), Windows}
-
-\headright{Recent achievements}
-\smaller{Solved +800 problems in leetcode and reached the top \textbf{10\%} in the leetcode cummunity} \\
-
-\end{minipage}
-
+%%%%%%% ---------------------------- END DOC HERE ---------------------------- %%%%%%% 
 \end{document}

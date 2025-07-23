@@ -1,4 +1,4 @@
-<font size="3"><p><b>Greetings,</b><br><br>
+<font size="3"><p><b>{greetings},</b><br><br>
 
 This mail to apply for the position of {position}.<br><br>
 

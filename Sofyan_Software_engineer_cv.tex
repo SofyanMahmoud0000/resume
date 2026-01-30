@@ -35,7 +35,7 @@
 %%-------------------------------------
 
 
-\documentclass[a4,10pt]{article}
+\documentclass[a4paper,10pt]{article}
 
 %%%%%%% --------------------------------------------------------------------------------------
 %%%%%%%  STARTING HERE, DO NOT TOUCH ANYTHING 
@@ -44,13 +44,12 @@
 \usepackage{latexsym}
 \usepackage[empty]{fullpage}
 \usepackage{titlesec}
- \usepackage{marvosym}
+\usepackage{marvosym}
 \usepackage[usenames,dvipsnames]{color}
 \usepackage{verbatim}
-\usepackage[hidelinks]{hyperref}
+\usepackage{hyperref}
 \usepackage{fancyhdr}
 \usepackage{multicol}
-\usepackage{hyperref}
 \usepackage{csquotes}
 \usepackage{tabularx}
 \hypersetup{colorlinks=true,urlcolor=black}
@@ -90,24 +89,9 @@ ItalicFont=SourceSansPro-RegularIt.otf
 %%%% Set Secondary Color
 \definecolor{UI_blue}{RGB}{32, 64, 151}
 
-%%%% Define New Commands
-\usepackage[style=nature, maxbibnames=3]{biblatex}
-\addbibresource{Publications.bib}
-
-%%%% Bold Name in Publications
-\renewcommand*{\mkbibnamegiven}[1]{%
-\ifitemannotation{highlight}
-{\textbf{#1}}
-{#1}}
-
-\renewcommand*{\mkbibnamefamily}[1]{%
-\ifitemannotation{highlight}
-{\textbf{#1}}
-{#1}}
-
 %%%% Set Sections formatting
 \titleformat{\section}{
-\color{UI_blue} \scshape \raggedright \large 
+\scshape \raggedright \large
 }{}{0em}{}[\vspace{-10pt} \hrulefill \vspace{-6pt}]
 
 %%%% Set Subtext Formatting
@@ -146,118 +130,101 @@ ItalicFont=SourceSansPro-RegularIt.otf
 %%%%%%%  HEADER
 %%%%%%% --------------------------------------------------------------------------------------
 \begin{center}
-    \begin{minipage}[b]{0.24\textwidth}
-            \large (+20) 1153383255 \\
-            \large \href{mailto:sofyan1020@gmail.com}{sofyan1020@gmail.com} 
-            \large Resides in Egypt
-    \end{minipage}% 
-    \begin{minipage}[b]{0.5\textwidth}
-            \centering
-            {\Huge Sofyan Mahmoud} \\ %
-            \vspace{0.1cm}
-            {\color{UI_blue} \Large{Software engineer}} \\
-    \end{minipage}% 
-    \begin{minipage}[b]{0.14\textwidth}
-            \flushright \large  % Willing to Relocate
-            \href{https://www.linkedin.com/in/sofyanmahmoud0000/}{\color{blue}{LinkedIn} } \\
-            \href{https://leetcode.com/u/sofyan1020/}{\color{blue}{Leetcode}} \\ 
-            \href{https://github.com/sofyanmahmoud0000}{\color{blue}{Github}} \\ 
-    \end{minipage}   
-    
-\vspace{-0.15cm} 
-% {\color{UI_blue} \hrulefill}
+    {\Huge Sofyan Mahmoud} \\
+    \vspace{0.05cm}
+    {\Large{Software Engineer}} \\
+    \vspace{0.1cm}
+    +20 115 338 3255 $|$ \href{mailto:sofyan1020@gmail.com}{sofyan1020@gmail.com} \\
+    \href{https://www.linkedin.com/in/sofyanmahmoud0000/}{\underline{LinkedIn}} $|$ \href{https://leetcode.com/u/sofyan1020/}{\underline{LeetCode}} $|$ \href{https://github.com/sofyanmahmoud0000}{\underline{GitHub}}
 \end{center}
-\vspace{-0.25cm}
+\vspace{-0.3cm}
 
+%%%%%%% --------------------------------------------------------------------------------------
+%%%%%%%  PROFESSIONAL SUMMARY
+%%%%%%% --------------------------------------------------------------------------------------
+\section{Professional Summary}
+\vspace{-0.1cm}
+Software Engineer with 3+ years of experience in full-stack development, primarily focused on back-end engineering. Proficient in Spring Boot/Java, Python/Flask, and C++ with strong foundation in data structures and algorithms. Currently automating accounting cycles through ERP and banking API integrations, designing RESTful APIs, and architecting database schemas. Achieved top 3\% ranking on LeetCode.
+\vspace{-0.1cm}
+
+%%%%%%% --------------------------------------------------------------------------------------
+%%%%%%%  SKILLS
+%%%%%%% --------------------------------------------------------------------------------------
+\section{Skills}
+\vspace{-0.1cm}
+\textbf{Programming Languages:} C++, Python, Java, PHP, JavaScript \\
+\textbf{Frameworks:} Spring Boot, Flask, Laravel, Node.js \\
+\textbf{Databases:} PostgreSQL, MySQL, MongoDB \\
+\textbf{Tools \& Technologies:} Git, GitHub, Docker, RabbitMQ, RESTful APIs, Microservices Architecture \\
+\textbf{Core Competencies:} Data Structures, Algorithms, Object-Oriented Programming (OOP), Design Patterns \\
+\textbf{Operating Systems:} Linux, Windows
+\vspace{-0.1cm}
 
 %%%%%%% --------------------------------------------------------------------------------------
 %%%%%%%  WORK EXPERIENCE
 %%%%%%% --------------------------------------------------------------------------------------
 \section{Experience}
 
-\subsection*{Back-end engineer @ Settle \hfill 2023/09 --- Present.} 
+\subsection*{Back-End Engineer @ Settle \hfill Sep 2023 - Present}
     \begin{zitemize}
-        \item Developing and maintaining a microservices-based peer-to-peer payment system, enabling clients to pay customers with a single click.
-        \item Designing and implementing RESTful APIs using Flask/Python to ensure seamless payment processing.
-        \item Conducting code reviews, refactoring, and performance optimizations to maintain high-quality and maintainable code.
-
-        \item \textbf{Stack}: Python (Flask), JS (NodeJs), Postgresql, RabbitMQ, Docker, Microservices.
+        \item Developed and maintained a microservices-based peer-to-peer payment system, enabling clients to pay customers with a single click
+        \item Designed and implemented RESTful APIs using Flask/Python for seamless data processing and system integration
+        \item Conducted code reviews and implemented performance optimizations, improving system response time and code maintainability
+        \item \textbf{Technologies}: Python (Flask), JavaScript (Node.js), PostgreSQL, RabbitMQ, Docker, Microservices Architecture
     \end{zitemize}
 
-\subsection*{Session Lead – Fundamentals of Programming @ Udacity \hfill 2024/10 --- Present.} 
+\subsection*{Session Lead – Fundamentals of Programming @ Udacity $|$ Part time \hfill Oct 2024 - Oct 2025}
     \begin{zitemize}
-        \item Led interactive sessions on the fundamentals of programming, covering core concepts such as data types, control structures, functions, and object-oriented programming (OOP).
-        \item Guided students through hands-on coding exercises and projects, helping them build a strong foundation in Python programming.
-        \item Reviewed student code, offering constructive feedback to reinforce clean coding practices and problem-solving techniques.
+        \item Led interactive programming sessions covering data types, control structures, functions, and object-oriented programming
+        \item Guided students through hands-on coding exercises and projects, achieving high student satisfaction ratings
+        \item Reviewed code submissions and provided constructive feedback to reinforce clean coding practices and problem-solving techniques
     \end{zitemize}
 
-\subsection*{C++ instructor @ MEC Academy \hfill 2023/08 --- 2023/12.} 
+\subsection*{C++ Instructor @ MEC Academy $|$ Part time \hfill Aug 2023 - Dec 2023}
     \begin{zitemize}
-        \item Delivering in-depth lessons on programming fundamentals, Object-Oriented Programming (OOP), 
-        data structures, and algorithms using C++.
-        \item Developed tailored learning materials to enhance understanding and retention of complex topics, ensuring a solid grasp of software 
-        engineering concepts.
-
+        \item Delivered comprehensive lessons on programming fundamentals, Object-Oriented Programming, data structures, and algorithms
+        \item Developed tailored learning materials and coding exercises to improve student understanding and performance
     \end{zitemize}
 
-\subsection*{Back-end engineer @ Eden technologies \hfill 2022/12 --- 2023/09.} 
+\subsection*{Back-End Engineer @ Eden Technologies \hfill Dec 2022 - Sep 2023}
     \begin{zitemize}
-        \item Developing and maintaining a car parking management system using microservices architecture, deployed in smart villages across Saudi Arabia.
-        \item Contributed to both back-end services and database design to manage parking transactions, access control, and real-time monitoring.
-        \item Implemented advanced features such as dynamic pricing and real-time occupancy updates, enhancing the system’s functionality and user experience.
-        \item \textbf{Tech Stack:} Java (Spring Boot), JS (NodeJs), PostgreSQL, MongoDB, RabbitMQ.
+        \item Developed and maintained a car parking management system deployed across smart villages in Saudi Arabia
+        \item Designed back-end services and database architecture to handle parking transactions and real-time monitoring
+        \item Implemented dynamic pricing and real-time occupancy updates to enhance system functionality and user experience
+        \item \textbf{Technologies}: Java (Spring Boot), JavaScript (Node.js), PostgreSQL, MongoDB, RabbitMQ
     \end{zitemize}
 
-\subsection*{Front-end engineer @ Egyptian armed forces \hfill 2021/11 --- 2022/12.} 
+\subsection*{Front-End Engineer @ Egyptian Armed Forces (National Service) \hfill Nov 2021 - Dec 2022}
     \begin{zitemize}
-        \item Developed and maintained front-end interfaces for a comprehensive ERP system used by the Egyptian Armed Forces, focusing on scalability and usability.
-        \item Collaborated with back-end teams to integrate APIs and ensure seamless data flow between the front-end and back-end systems.
-        \item \textbf{Stack}: React, Java script
+        \item Developed and maintained front-end modules for a comprehensive ERP system focusing on scalability and usability
+        \item Collaborated with back-end teams to integrate APIs and reduce data synchronization errors
+        \item \textbf{Technologies}: React, JavaScript
     \end{zitemize}
 
-\subsection*{Full-stack engineer @ NajahNow \hfill 2020/06 --- 2021/03.} 
+\subsection*{Full-Stack Engineer @ NajahNow $|$ Part time \hfill Jun 2020 - Mar 2021}
     \begin{zitemize}
-        \item Worked on the development of an online educational platform that played a key role in providing remote learning during the COVID-19 pandemic.
-        \item Handled both front-end and back-end development tasks, from designing intuitive user interfaces to building secure and efficient back-end services.
-        \item Played a critical role in launching new features such as payment gateway integration and real-time quizzes, which greatly enhanced the learning experience for users.
-        \item \textbf{Stack}: PHP/Laravel, Blade templates, JS, HTML, CSS, MySQL
+        \item Developed an online educational platform that provided critical remote learning solutions during the COVID-19 pandemic
+        \item Built full-stack features including secure authentication, course management, and student dashboards
+        \item Launched payment gateway integration and real-time quizzes to enhance student engagement and learning experience
+        \item \textbf{Technologies}: PHP/Laravel, Blade Templates, JavaScript, HTML, CSS, MySQL
     \end{zitemize}
 
 %%%%%%% --------------------------------------------------------------------------------------
-%%%%%%%  PUBLICATIONS
+%%%%%%%  ACHIEVEMENTS
 %%%%%%% --------------------------------------------------------------------------------------
-\section{Recent achievements} 
-\renewcommand\refname{\vskip -1.5em}
+\section{Achievements}
 \begin{zitemize}
-    \item Reached the \textbf{top 3\%} in \textbf{Leetcode} cummunity -most famous platform for problem solving-
+    \item Achieved \textbf{top 3\%} ranking on \textbf{LeetCode}, a leading competitive programming platform with over 20 million users worldwide
+    \item Graduated with \textbf{Very Good} overall grade and \textbf{Excellent} graduation project grade from Cairo University
 \end{zitemize}
-\printbibliography[heading=none]
 \vspace{0.2cm}
 
-%%%%%%% --------------------------------------------------------------------------------------
-%%%%%%%  SKILLS
-%%%%%%% --------------------------------------------------------------------------------------
-\section{Skills}
-\begin{tabular}{p{14em} p{48em}}
-\hskills{Concepts:} &  Algorithms, Data structure, Problem solving, OOP, OOD, Design
-patterns, RESTful APIs. \\
-\hskills{Tools:} & Git, Github, Docker.  \\
-\hskills{Programming Languages} & C++, Python/flask, Java/springboot, php/laravel, Js/nodejs. \\
-\hskills{Database:} & SQL, MySQL, MongoDB, PostgreSql. \\
-\hskills{Queuing system} & RabbitMQ. \\
-\hskills{OS} & Linux, Windows \\
-\end{tabular}
-\vspace{-0.2cm}
 
 %%%%%%% --------------------------------------------------------------------------------------
 %%%%%%%  EDUCATION
 %%%%%%% --------------------------------------------------------------------------------------
-\section{Education }
-\subsection*{Bachelor of Engineering, Software Engineering, {\normalsize \normalfont Cairo university, Grade: Very Good} \hfill 2016 --- 2021} 
-\begin{zitemize}
-    \item \textbf{Overall Grade}: Very Good, \textbf{GP grade}: Excellent
-    
-\end{zitemize}
+\section{Education}
+\subsection*{Bachelor of Engineering, Software Engineering, {\normalsize \normalfont Cairo University} \hfill Sep 2016 - Jul 2021}
 \vspace{0.2cm}
 
 \end{document}

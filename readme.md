@@ -1,21 +1,25 @@
 <font size="2"><p><b>{greetings},</b><br><br>
 
-I hope this email find you well.<br><br>
-
-This mail is to apply for position: <b>{position}</b>.<br><br>
+This message is to apply for the position: <b>{position}</b>.<br><br>
 
 <b>Let me introduce myself,</b><br>
-I am Sofyan, a software engineer with <b>over three years of experience.</b>
-I graduated from the <b>Faculty of Engineering</b>, Computer Department at <b>Cairo University</b> in Egypt.
-My primary interest lies in <b>backend</b>.
-I have gained extensive experience through my involvement in various projects,
-using different frameworks and languages including <b>Flask/Python, Spring Boot/Java,
-Laravel/PHP, Node.js, React.js, and C++.</b> Additionally, I have worked with diverse
-database engines such as <b>MySQL, PostgreSQL, and MongoDB.</b> Furthermore, I am deeply
-passionate about <b>problem-solving,</b> and I am proud to have recently achieved a <b>top 3%
-ranking in the LeetCode</b> community for my problem-solving skills.<br><br>
+I am Sofyan, a Software Engineer with <b>4+ years of experience</b> in full-stack development,
+focused on <b>back-end engineering</b>. I have built production-grade systems across a range of
+business models, including <b>B2B</b>, <b>B2C</b>, and <b>B2B2C</b>, with microservices and payment
+infrastructure at a fintech company, a smart-city platform, and an edtech platform, so I adapt
+quickly to new domains rather than being tied to one industry.<br><br>
 
-Feel free to ask for any other details.<br><br>
+I am a dedicated problem solver, ranked <b>top 3%</b> on <b>LeetCode</b>. I am also passionate
+about <b>AI agents</b> and the <b>Model Context Protocol (MCP)</b>, and have built internal
+tooling that connects AI agents directly to production systems to automate real operational
+work.<br><br>
 
-Sofyan Mahmoud.<br>
-Best Regards.</p></font>
+I would welcome the chance to bring this mix of backend depth, cross-domain adaptability, and
+AI-agent experience to your team. My resume is attached, and I would be glad to discuss
+further.<br><br>
+
+Best regards,<br>
+Sofyan Mahmoud<br>
+Email: sofyan1020@gmail.com<br>
+LinkedIn: https://www.linkedin.com/in/sofyanmahmoud0000/<br>
+LeetCode: https://leetcode.com/u/sofyan1020/</p></font>

@@ -2,6 +2,8 @@ services:
   latex:
     container_name: latex
     image: sofyanmahmoud0000/latex:2
+    environment:
+      YEARS_OF_EXP: ${YEARS_OF_EXP:-5}
     build: .
     volumes:
       - ./:/app
